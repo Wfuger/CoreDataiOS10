@@ -26,7 +26,7 @@ class MainVC: UIViewController,
         tableView.delegate = self
         tableView.dataSource = self
         
-        generateTestData()
+//        generateTestData()
         attemptFetch()
     }
 
@@ -136,7 +136,9 @@ class MainVC: UIViewController,
         item2.price = 300
         item2.details = "Block out the world with noise cancelling headphones"
         
+        ad.saveContext()
     }
-
+    
+    
 }
 
