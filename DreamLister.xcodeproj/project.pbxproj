@@ -22,6 +22,7 @@
 		76D514501DA815F1008385BD /* Image+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D514481DA815F1008385BD /* Image+CoreDataClass.swift */; };
 		76D514511DA815F1008385BD /* Image+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D514491DA815F1008385BD /* Image+CoreDataProperties.swift */; };
 		76D514561DA823DA008385BD /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D514551DA823DA008385BD /* MaterialView.swift */; };
+		76D514581DA82C5F008385BD /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D514571DA82C5F008385BD /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		76D514481DA815F1008385BD /* Image+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataClass.swift"; sourceTree = "<group>"; };
 		76D514491DA815F1008385BD /* Image+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Image+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		76D514551DA823DA008385BD /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		76D514571DA82C5F008385BD /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				76D514551DA823DA008385BD /* MaterialView.swift */,
+				76D514571DA82C5F008385BD /* ItemCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76D514581DA82C5F008385BD /* ItemCell.swift in Sources */,
 				76D514301DA803A9008385BD /* MainVC.swift in Sources */,
 				76D5144C1DA815F1008385BD /* Store+CoreDataClass.swift in Sources */,
 				76D5144F1DA815F1008385BD /* ItemType+CoreDataProperties.swift in Sources */,
