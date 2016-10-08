@@ -26,7 +26,7 @@ class MainVC: UIViewController,
         tableView.delegate = self
         tableView.dataSource = self
         
-//        generateTestData()
+        generateTestData()
         attemptFetch()
     }
 
@@ -44,6 +44,7 @@ class MainVC: UIViewController,
         }
         return 0
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let sections = controller.sections {
             let sectionInfo = sections[section]
@@ -51,6 +52,29 @@ class MainVC: UIViewController,
         }
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let objs = controller.fetchedObjects , objs.count > 0 {
+            
+            let item = objs[indexPath.row]
+            
+            performSegue(withIdentifier: "ItemDetailsVC", sender: item)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ItemDetailsVC" {
+            if let destination = segue.destination as? ItemDetailVC {
+                if let item = sender as? Item {
+                    destination.itemToEdit = item
+                }
+            }
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
@@ -144,6 +168,7 @@ class MainVC: UIViewController,
         
         ad.saveContext()
     }
+    
     
     
 }
