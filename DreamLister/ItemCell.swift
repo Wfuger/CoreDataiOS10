@@ -16,7 +16,8 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var detailLabel: UILabel!
     
     func configureCell(item: Item) {
-        print(item)
+        
+        thumbnail.image = item.toImage?.image as? UIImage
         titleLabel.text = item.title
         priceLabel.text = "$\(item.price)"
         detailLabel.text = item.details

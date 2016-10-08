@@ -162,6 +162,9 @@
                                     <constraint firstAttribute="height" constant="100" id="8tb-kE-K7R"/>
                                     <constraint firstAttribute="width" constant="100" id="T4C-pg-G1M"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="q82-1R-JEl" eventType="touchUpInside" id="UtB-rl-JYK"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kmw-5J-ls6" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <constraints>
@@ -244,10 +247,14 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="8mG-IH-6mR">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="ZBM-vO-8JW">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="q82-1R-JEl" id="Et5-G9-9xa"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="3LH-jo-BKh" id="JZj-zl-BQU"/>
+                        <outlet property="imagePick" destination="WHF-n2-oLc" id="wDd-3Q-THS"/>
                         <outlet property="priceField" destination="dsM-9L-IeB" id="Ibf-uI-YT6"/>
                         <outlet property="storePicker" destination="kym-Ev-i6D" id="a5f-S6-PRJ"/>
                         <outlet property="titleField" destination="Kmw-5J-ls6" id="LcI-3R-j8c"/>
