@@ -30,6 +30,9 @@ class MainVC: UIViewController,
         attemptFetch()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        attemptFetch()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -54,7 +57,7 @@ class MainVC: UIViewController,
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         configureCell(cell: cell, indexPath: indexPath as NSIndexPath)
-        return UITableViewCell()
+        return cell
     }
     
     func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
@@ -64,7 +67,7 @@ class MainVC: UIViewController,
         
     }
     
-    //
+    
     func attemptFetch() {
         
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -72,6 +75,8 @@ class MainVC: UIViewController,
         fetchRequest.sortDescriptors = [dateSort]
         
         let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        
+        controller.delegate = self
         self.controller = controller
         
         do {
@@ -122,6 +127,7 @@ class MainVC: UIViewController,
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
+            break
         }
         
     }
